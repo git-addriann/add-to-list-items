@@ -36,7 +36,7 @@ onValue(shoppingListInDB, function(snapshot) {
 
 addButtonEl.addEventListener("click", function() {
 
-     let inputValue = inputFieldEL.value
+     let inputValue = inputFieldEL.value.toUpperCase().charAt(0) + inputFieldEL.value.slice(1)
 
      if(inputValue === ""){
 
@@ -46,6 +46,7 @@ addButtonEl.addEventListener("click", function() {
      else{
           
           push(shoppingListInDB, inputValue)
+
           clearInputFieldEl();
           
           console.log(`${inputValue} added to database!`)
